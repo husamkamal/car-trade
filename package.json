@@ -1,0 +1,39 @@
+{
+  "name": "car-trade",
+  "version": "1.0.0",
+  "description": "An app facilitate a way to buy and sell a car simply and easily",
+  "main": "commitlint.config.js",
+  "dependencies": {
+    "is-ci": "^3.0.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "husky": "^8.0.1"
+  },
+  "scripts": {
+    "start": "cd server && npm start",
+    "client": "cd client && npm run start",
+    "test": "cd server && npm run test",
+    "format": "cd server && npm run format && cd ../client && npm run format",
+    "prepare": "is-ci || npx husky install",
+    "init": "cd client && npm i && cd ../server && npm i",
+    "install": "npm run init",
+    "dev": "cd server && npm run dev",
+    "build:react:server":"cd client && npm run build && cd ../server && npm run build",
+    "heroku-postbuild": "npm run build:react:server",
+    "build": "npm i && npm run build:react:server"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CA-G12/car-trade.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CA-G12/car-trade/issues"
+  },
+  "homepage": "https://github.com/CA-G12/car-trade#readme"
+}
